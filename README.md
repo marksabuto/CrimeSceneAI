@@ -121,4 +121,3 @@ MIT License *(Consider adding full LICENSE file later)*
 3. Add a simple logo (optional)
 4. Create a separate `LICENSE` file when ready
 
-Would you like me to generate any specific additional documentation (like a contribution guide or API reference)?
