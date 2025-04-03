@@ -1,0 +1,32 @@
+# Ignore data folders (large files)
+data/
+models/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Environment files
+.env
+venv/
+.env.local
+
+# IDE-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Jupyter notebooks (if used)
+*.ipynb_checkpoints/
+
+# Logs and temporary files
+*.log
+*.tmp
