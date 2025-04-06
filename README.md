@@ -92,7 +92,6 @@ CrimeSceneAI/
 | Precision    | 89.5%            |
 | Recall       | 94.1%            |
 
-*(Update these with your actual results)*
 
 ## 🤝 How to Contribute
 1. Report issues in GitHub Issues
@@ -100,24 +99,11 @@ CrimeSceneAI/
 3. Enhance model architecture
 
 ## 📜 License
-MIT License *(Consider adding full LICENSE file later)*
+MIT License 
 
 ## 📞 Contact
 - **Developer**: Marks Abuto
 - **Email**: marksabuto@gmail.com
 - **GitHub**: [github.com/marksabuto](https://github.com/marksabuto)
 
-```
-
-### Key Features of This README:
-1. **Self-Documenting**: Contains all setup/usage instructions
-2. **Visual Hierarchy**: Clear section organization
-3. **Future-Proof**: Placeholders for expansion (license, logo)
-4. **Action-Oriented**: Direct commands for quick start
-
-### Recommended Next Steps:
-1. Save this as `README.md` in your project root
-2. Customize the "Current Performance" section after training
-3. Add a simple logo (optional)
-4. Create a separate `LICENSE` file when ready
 
