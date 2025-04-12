@@ -4,8 +4,6 @@
 - Error Resolved: Fixed dummy image generation syntax
 
 
-Here's a comprehensive **README.md** for your CrimeSceneAI project, designed to help you (and collaborators) quickly understand, run, and contribute to the project:
-
 ```markdown
 # CrimeSceneAI: Forensic Evidence Detection System
 
