@@ -1,107 +1,114 @@
-## Last Session (2025-04-03)
-- Completed: Set up PyTorch training pipeline
-- Next Steps: Source real bloodstain images from NIST
-- Error Resolved: Fixed dummy image generation syntax
+# CrimeSceneAI
 
+A machine learning project for detecting bloodstains in images using computer vision and deep learning techniques.
 
-```markdown
-# CrimeSceneAI: Forensic Evidence Detection System
+## Project Overview
 
+CrimeSceneAI is designed to assist in crime scene analysis by automatically detecting bloodstains in images. The system uses a Convolutional Neural Network (CNN) trained on a dataset of bloodstain and non-bloodstain images.
 
-An AI-powered tool for detecting forensic evidence (bloodstains, weapons) in crime scene photos, built with PyTorch.
+## Features
 
-## 🔍 Project Overview
-- **Goal**: Automate preliminary forensic analysis using computer vision
-- **Current Focus**: Bloodstain detection in images
-- **Future Scope**: Weapon detection, fingerprint analysis, scene reconstruction
+- Automated bloodstain detection in images
+- High-accuracy CNN model
+- Easy-to-use image processing pipeline
+- Support for various image formats
+- Real-time detection capabilities
 
-## 🛠️ Technical Stack
-- **Core Framework**: PyTorch 2.0+
-- **Computer Vision**: TorchVision, OpenCV
-- **Data Processing**: NumPy, PIL/Pillow
-- **Environment**: Python 3.11
+## Prerequisites
 
-## 🚀 Getting Started
+- Python 3.8 or higher
+- pip (Python package manager)
 
-### Prerequisites
-- Python 3.11 ([Download](https://www.python.org/downloads/))
-- Git ([Download](https://git-scm.com/))
-- NVIDIA GPU (Optional, for CUDA acceleration)
+## Installation
 
-### Installation
+1. Clone the repository:
 ```bash
-# Clone repository
-git clone https://github.com/marksabuto/CrimeSceneAI.git
+git clone https://github.com/yourusername/CrimeSceneAI.git
 cd CrimeSceneAI
+```
 
-# Create and activate virtual environment
+2. Create a virtual environment (recommended):
+```bash
 python -m venv venv
-venv\Scripts\activate  # Windows
-source venv/bin/activate  # Mac/Linux
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-# Install dependencies
+3. Install required packages:
+```bash
 pip install -r requirements.txt
 ```
 
-### Dataset Setup
-1. Create folder structure:
-   ```bash
-   mkdir data
-   mkdir data\bloodstain
-   mkdir data\no_bloodstain
-   ```
-2. Add images:
-   - Bloodstain samples in `data/bloodstain/`
-   - Clean surfaces in `data/no_bloodstain/`
+## Setup
 
-*(Sample datasets available from [NIST](https://www.nist.gov/programs-projects/bloodstain-pattern-analysis))*
+1. Get an Unsplash Access Key:
+   - Visit https://unsplash.com/developers
+   - Register as a developer
+   - Copy your Access Key
 
-## 🧠 Training the Model
+2. Update the script with your Access Key:
+   - Open `src/download_images.py`
+   - Replace `'Client-ID YOUR_ACCESS_KEY'` with your actual Unsplash Access Key
+
+## Usage
+
+### Downloading Training Images
+
+To download images for training the model:
+```bash
+python src/download_images.py
+```
+
+This will:
+- Create `data/bloodstain` and `data/no_bloodstain` directories
+- Download bloodstain and non-bloodstain images from Unsplash
+- Preprocess and save the images in the appropriate directories
+
+### Training the Model
+
+To train the bloodstain detection model:
 ```bash
 python src/train.py
 ```
-**Expected Output**:
-```
-Epoch 1, Loss: 0.6931
-Epoch 2, Loss: 0.6823
-...
-Model saved to models/bloodstain_model.pth
-```
 
-## 🏗️ Project Structure
+This will:
+- Load and preprocess the training images
+- Train the CNN model
+- Save the trained model to `models/bloodstain_detector.pth`
+
+## Project Structure
+
 ```
 CrimeSceneAI/
-├── data/               # Training datasets (not versioned)
-├── models/             # Saved model weights
-├── notebooks/          # Experimental Jupyter notebooks
-├── src/
-│   ├── train.py        # Model training script
-│   ├── predict.py      # Inference script
-│   └── utils/          # Helper functions
-├── .gitignore
-├── requirements.txt
-└── README.md
+├── data/                  # Training data
+│   ├── bloodstain/       # Images containing bloodstains
+│   └── no_bloodstain/    # Images without bloodstains
+├── models/               # Trained models
+├── src/                  # Source code
+│   ├── download_images.py # Image download script
+│   └── train.py          # Model training script
+├── requirements.txt      # Python dependencies
+└── README.md            # This file
 ```
 
-## 📊 Current Performance
-| Metric       | Value (Test Set) |
-|--------------|------------------|
-| Accuracy     | 92.3%            |
-| Precision    | 89.5%            |
-| Recall       | 94.1%            |
+## Model Architecture
 
+The bloodstain detection model uses a CNN with the following architecture:
+- 3 convolutional layers with increasing depth
+- Max pooling layers for dimensionality reduction
+- Dropout for regularization
+- Fully connected layers for classification
 
-## 🤝 How to Contribute
-1. Report issues in GitHub Issues
-2. Suggest dataset improvements
-3. Enhance model architecture
+## Contributing
 
-## 📜 License
-MIT License 
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📞 Contact
-- **Developer**: Marks Abuto
-- **Email**: marksabuto@gmail.com
-- **GitHub**: [github.com/marksabuto](https://github.com/marksabuto)
+## License
 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Images sourced from Unsplash
+- Built with PyTorch and OpenCV
+- Inspired by forensic science applications
 
