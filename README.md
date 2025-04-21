@@ -23,7 +23,7 @@ CrimeSceneAI is designed to assist in crime scene analysis by automatically dete
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/CrimeSceneAI.git
+git clone https://github.com/marksabuto/CrimeSceneAI.git
 cd CrimeSceneAI
 ```
 
